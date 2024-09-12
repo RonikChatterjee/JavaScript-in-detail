@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Asyncronous Events </title>
+</head>
+<body>
+    <h1 id="h1">Chai aur code</h1>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    // setTimeout():
+    // first way:
+    // setTimeout(function() {
+    //     console.log('3 seconds have passed');
+        
+    // }, 3000);
+    
+    // Second way:
+    // setTimeout(() => {
+    //     console.log('3 seconds have passed');
+        
+    // }, 3000);
+    
+    // Third way:
+    // setTimeout(test, 3000); // Reference to the function can also be given as a handler/callback function
+
+    // function test() {
+    //     console.log('3 seconds have passed');
+    // }
+
+
+    // Direct approach:
+    // document.querySelector("#h1").textContent = "Best Java Script Course";
+    
+    // Runs after certain time:
+    const changeText = function() {
+        console.log('5 seconds have passed');
+        document.querySelector("#h1").textContent = "Best Java Script Course";    
+    }
+    // setTimeout(changeText, 5000);
+    const changeMe = setTimeout(changeText, 5000); // Taking reference of the function [setTimeout()] in a variable
+
+
+    // clearTimeout():
+    const stop = document.querySelector("#stop");
+    stop.addEventListener('click', function() {
+        clearTimeout(changeMe);
+        console.log(`[setTimeout()] has been stopped`);
+    });
+</script>
+</html>

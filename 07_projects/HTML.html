@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS in HTML</title>
+    <style>
+        body{
+            background-color: #414141;
+            color: #fff;
+        }
+        h1{
+            text-align: center;
+        }
+        .form-main{
+            display: flex;
+            justify-content: center;
+            margin: 25px;
+        }
+        .form-main label{
+            margin-right: 10px;
+        }
+        .form-main input{
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+        #submit{
+            display: block;
+            margin: 0 auto;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #186bca;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Forms in HTML</h1>
+    <form action="" method="POST">
+        <div class="form-main">
+            <label for="fname">First Name</label>
+            <input type="text" placeholder="Enter your first name" name="fname" id="fname">
+        </div>
+        <div class="form-main">
+            <label for="lname">Last Name</label>
+            <input type="text" placeholder="Enter your last name" name="lname" id="lname">
+        </div>
+        <button type="submit" id="submit">SUBMIT</button>
+    </form>
+</body>
+</html>

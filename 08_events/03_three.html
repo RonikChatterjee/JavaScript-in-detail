@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Asyncronous Events </title>
+</head>
+<body>
+    <h1 id="h1">Chai aur code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setInterval():
+    // first way:
+    // setInterval(function() {
+    //     console.log("Ronik", Date.now());
+        
+    // }, 3000);
+
+    // Second way:
+    // setInterval(() => {
+    //     console.log("Ronik", Date.now()); 
+    
+    // }, 3000);
+
+    // Third way:
+    const nameAndDate = function(str) {
+        console.log(`${str} Ronik, ${Date.now()}` );
+    }
+    const changeMe = setInterval(nameAndDate, 3000, "Hello,"); // Reference to the function can also be given as a handler/callback function
+
+    // const nameAndDate = function() {
+    //     console.log("Ronik", Date.now());
+    // }
+    // const changeMe = setInterval(nameAndDate, 3000);
+
+
+    // clearInterval():
+    clearInterval(changeMe);
+    
+    // const stop = document.querySelector("#stop");
+    // stop.addEventListener('click', function() {
+    //     clearInterval(changeMe);
+    //     console.log(`[setInterval()] has been stopped`);
+    // }); // To stop the setInterval()
+
+
+    // const start = document.querySelector("#start");
+    // start.addEventListener('click', function() {
+    //     setInterval(nameAndDate, 3000);
+    //     console.log(`[setInterval()] has been started`);
+    // }); // To start the setInterval() again
+
+
+
+
+</script>
+</html>

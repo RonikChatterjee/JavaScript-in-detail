@@ -1,0 +1,109 @@
+body {
+  background-color: #414141;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.container > h1 {
+  display: flex;
+  width: 100%;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px 2px 10px;
+}
+
+.container > span {
+  padding-bottom: 5px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.main > label {
+  font-size: 50px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.main > input {
+  width: 180px;
+  height: 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.main > input:active {
+  border: 2px solid #7dc0ff;
+}
+
+.main > input[type='submit'] {
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #212121;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.main > input[type='submit']:hover {
+  background-color: #7dc0ff;
+}
+
+.main > input[type='submit']:active {
+  border: 2px solid #fff;
+}
+
+.result-paras {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Hide the element if this class is added */
+.hidden {
+  visibility: hidden;
+}
+
+#Start {
+  display: block;
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #212121;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#Start:hover {
+  background-color: #7dc0ff;
+}

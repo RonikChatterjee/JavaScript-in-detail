@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/05_form.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Registration Form</h1>
+        <form id="form">
+            <div id="firstName" class="input_box">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" placeholder="Enter your first name" autocomplete="off">
+                <span class="hidden massege">Enter your First Name</span>
+            </div>
+            
+            <div id="middleName" class="input_box">    
+                <label for="mname">Middle Name</label>
+                <input type="text" id="mname" placeholder="Enter your middle name">
+                <span class="hidden massege">Enter your Middle Name</span>
+            </div>
+            
+            <div id="lastName" class="input_box">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" placeholder="Enter your last name" autocomplete="off">
+                <span class="hidden massege">Enter your Last Name</span>
+            </div>
+
+            <div id="birthDate" class="input_box">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" autocomplete="off">
+                <span class="hidden massege">Enter a valid DOB</span>
+            </div>
+
+            <div id="radio" class="input_box">
+                <input type="radio" class="gender" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" class="gender" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <input type="radio" class="gender" id="others" name="gender" value="others">
+                <label for="others">Others</label>
+                <span class="hidden massege">Select your Gender</span>
+            </div>
+
+            <div id="mailId" class="input_box">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" autocomplete="off">
+                <span class="hidden massege">Enter a valid Email Id</span>
+            </div>
+
+            <div id="contact" class="input_box">
+                <label for="phone">Mobile no.</label>
+                <input type="tel" id="phone" placeholder="Enter your mobile number" autocomplete="off">
+                <span class="hidden massege">Enter a valid Mobile no.</span>
+            </div>
+            
+            <div id="myCountry" class="input_box">
+                <label for="country">Country</label>
+                <select name="country" id="country" autocomplete="off">
+                    <option value="">--Please choose your country--</option>
+                    <option value="India">India</option>
+                </select>
+                <span class="hidden massege">Only Indian citizens are allowed</span>
+            </div>
+
+            <div id="myState" class="input_box">
+                <label for="state">State</label>
+                <select name="state" id="state" autocomplete="off">
+                    <option value="">--Please choose your state--</option>
+                </select>
+                <span class="hidden massege">Select a valid State</span>
+            </div>
+
+            <div id="myCity" class="input_box">
+                <label for="city">City</label>
+                <select name="city" id="city" autocomplete="off">
+                    <option value="">--Please choose an option--</option>
+                </select>
+                <span class="hidden massege">Select a valid City</span>
+            </div>
+                
+            <div id="Zipcode" class="input_box">
+                <label for="zip">Zipcode</label>
+                <input type="text" id="zip" placeholder="Enter your pincode" pattern="[0-9]{6}" autocomplete="off">
+                <span class="hidden massege">Select a valid Zipcode</span>
+            </div>
+
+            <div id="myAddress" class="input_box">
+                <label for="address">Address</label>
+                <textarea name="address" id="address" cols="30" rows="5" placeholder="Enter your address" autocomplete="off"></textarea>
+                <span class="hidden massege">Enter a valid Address</span>
+            </div>
+           
+            <div id="myPassword" class="input_box">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" autocomplete="off">
+                <span class="hidden massege" id="eight">Password must be at least 8 Characters long</span>
+                <span class="hidden massege" id="lower">Password must contain at least one Lowercase Letter</span>
+                <span class="hidden massege" id="upper">Password must contain at least one Uppercase Letter</span>
+                <span class="hidden massege" id="num">Password must contain at least one Number</span>
+                <span class="hidden massege" id="special">Password must contain at least one Special Character</span>
+            </div>
+
+            <div id="cPassword" class="input_box">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm your password" autocomplete="off">
+                <span class="hidden massege" id="confirm">Enter a same Password</span>
+                <!-- <span class="hidden massege">Password must be at least 8 Characters long</span>
+                <span class="hidden massege">Password must contain at least one Lowercase Letter</span>
+                <span class="hidden massege">Password must contain at least one Uppercase Letter</span>
+                <span class="hidden massege">Password must contain at least one Number</span>
+                <span class="hidden massege">Password must contain at least one Special Character</span> -->
+            </div>
+
+            <div id="myColor" class="input_box">
+                <label for="favColor">Enter your favourite colour</label>
+                <input type="color" id="favColor" autocomplete="off">
+                <span class="hidden massege">Enter a valid colour</span>
+            </div>
+
+
+            <div id="button">
+                <button value="Submit" id="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="js/06_cities and state.js"></script>
+<script src="js/05_forms.js"></script>
+</html>

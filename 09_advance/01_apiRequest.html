@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request</title>
+    <style>
+        table, th, td {
+            border: 1px solid #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <table>
+        <tr>
+            <th>VALUE</th>
+            <th>STATE</th>
+            <th>DESCRIPTION</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>UNSENT</td>
+            <td>Client has been created. open() not called yet.</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>OPENED</td>
+            <td>open() has been called.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>HEADERS_RECEIVED</td>
+            <td>send() has been called, and headers and status are available.</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>LOADING</td>
+            <td>Downloading; responseText holds partial data.</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>DONE</td>
+            <td>The operation is complete.</td>
+        </tr>
+    </table>
+</body>
+    <script>
+        const requestURL = 'https://api.github.com/users/hiteshchoudhary';
+        const xhr = new XMLHttpRequest(); // Create a new object of XMLHttpRequest class
+        // console.log('State: ', xhr.readyState); // 0
+        
+        // xhr.onreadystatechange = function() {
+        //     console.log('State: ', xhr.readyState); // 1, 2, 3, 4
+            
+        // };
+        xhr.open('GET', requestURL);
+        // xhr.onreadystatechange = function() {
+        //     console.log('State: ', xhr.readyState); // 2, 3, 4
+            
+        // };
+        xhr.send();
+        // xhr.onreadystatechange = function() {
+        //     console.log('State: ', xhr.readyState); // 2, 3, 4
+            
+        // };
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                console.log("Response",this.responseText);
+                console.log("Response",typeof this.responseText);
+                const data = JSON.parse(this.responseText);
+                // const data = this.responseText.json();
+                const followers = data.followers;
+                console.log(this.responseText); // this doesn't work in case of arrow function
+            }
+        };
+
+        // console.log(xhr.responseText);
+        // console.log('State: ', xhr.readyState); // 1
+        // const data = JSON.parse(xhr.responseText);
+        // const followers = data.followers;
+        // console.log(xhr.responseText);
+        // console.log(followers);
+        
+    </script>
+</html>

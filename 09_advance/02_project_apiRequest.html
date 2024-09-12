@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project On API Request</title>
+    <style>
+        body {
+            background-color: #414141;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #switch {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #44a5ff;
+            color: black;
+            border: 5px solid aliceblue;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .id_card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 5px #000;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="switch">GENARATE ID</button>
+    </div>
+</body>
+<script>
+    // const requestURL = 'https://api.github.com/users/hiteshchoudhary';
+    const requestURL = 'https://api.github.com/users/RonikChatterjee';
+    const xhr = new XMLHttpRequest(); // Create a new object of XMLHttpRequest class
+
+    const switchButton = document.getElementById('switch');
+    const container = document.querySelector('.container');
+    
+    let followers = 0;
+    let image;
+    
+    switchButton.addEventListener( 'click', () => {
+        xhr.open('GET', requestURL);
+        xhr.send();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.response);
+                const followers = data.followers;
+                const image = data.avatar_url;
+
+                container.innerHTML = `<div class='id_card'>
+                    <h1 style="font-size: 40px; text-decoration: underline;">ID Card</h1>
+                    <img src='${image}' alt='Profile Image' style='border-radius: 50%;'>
+                    <h2 style="font-size: 20px">Followers: ${followers}</h2>
+                </div>`;
+            }
+        };
+    });
+</script>
+</html>

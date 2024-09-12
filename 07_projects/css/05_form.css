@@ -1,0 +1,67 @@
+body {
+    background-color: #414141;
+    color: #212121;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-color: aliceblue;
+    padding: 2.5rem;
+    border: 2px solid #41b5f8;
+    border-radius: 10px;
+}
+
+#title {
+    text-align: center;
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 5rem;
+    text-decoration: underline;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    width: 50%;
+}
+
+.input_box {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 10rem; */
+    /* margin-right: 10rem; */
+}
+
+.input_box > input, .input_box > select, .input_box > textarea {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    /* border: 1px solid #000; */
+    border-radius: 5px;
+}
+
+/* .input_box > input:focus, .input_box > select:focus, .input_box > textarea:focus {
+    border: 1px solid #000;
+} */
+
+.massege {
+    color: #FF0000;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+.error {
+    border: 3px solid #FF0000;
+}
+
+.noError {
+    border: 3px solid #008000;
+}
+
+.hidden {
+    visibility: hidden;
+}

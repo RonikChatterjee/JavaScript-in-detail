@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number guessing game</title>
+    <link rel="stylesheet" href="css/04_projectFour.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Number guessing game</h1>
+        <span>Try and guess a random number between 1 and 100.</span>
+        <span>You have 10 attempts to guess the right number.</span>
+        <form class="main">
+            <label for="guessInput">Guess a Number</label>
+            <input type="text" id="guessInput">
+            <input type="submit" id="subt" value="Submit guess">
+        </form>
+        <div class="result-paras">
+            <p>Previous Guesses: <span id="guess"></span></p>
+            <p>Remaining Guesses: <span id="last-result">10</span></p>
+            <p class="lowOrHi"></p>
+            <input type="submit" id="Start" class="hidden" value="Start New game">
+            <!-- hidden = "true" is equivalent to display: none in css -->
+            <!-- It can't be changed by visibility: 'visible' -->
+            <!-- you need to use display: 'block' for that -->
+        </div>
+    </div>
+
+</body>
+<script src="js/04_projectFour.js"></script>
+
+</html>
