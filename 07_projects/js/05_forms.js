@@ -19,8 +19,8 @@ const form = document.getElementById('form');
 const submitBtn = document.getElementById('submit');
 
 // Constants
-// const email_pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-const email_pattern = new RegExp('^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$'); // done
+
+const email_pattern = new RegExp('^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$');
 const phone_pattern = new RegExp('^\\d{10}$'); // done
 // const eightChar = new RegExp('(?=.*\\{8,})');
 const lowercase = new RegExp('(?=.*[a-z])');
@@ -55,11 +55,14 @@ function validateDOB () {
 }
 
 function validateGender () {
-    for(const gender in genders) {
-        if (gender.ckecked) {
-            return true;
+    const gender = Array.from(genders);
+    let valid = false;
+    for(const g of gender) {
+        if (g.checked) {
+            valid = true;
         }
     }
+    return valid;
 }
 
 function validateEmail () {
@@ -137,116 +140,140 @@ function finalCheck () {
 
 function validateForm () {
     
-    if (!(validateFirstName())) {
+    {
         const parent = f_name.parentElement;
-        f_name.classList.add('error');
-        parent.children[2].classList.remove('hidden');
-    } else {
-        f_name.classList.remove('error');
-        parent.children[2].classList.add('hidden');
+        if (!(validateFirstName())) {
+            f_name.classList.add('error');
+            parent.children[2].classList.remove('hidden');
+        } else {
+            f_name.classList.remove('error');
+            parent.children[2].classList.add('hidden');
+        }
     }
 
-    if (!(validateLastName())) {
+    {
         const parent = f_name.parentElement;
-        l_name.classList.add('error');
-        parent.children[2].classList.remove('hidden');
-    } else {
-        l_name.classList.remove('error');
-        parent.children[2].classList.add('hidden');
+        if (!(validateLastName())) {
+            l_name.classList.add('error');
+            parent.children[2].classList.remove('hidden');
+        } else {
+            l_name.classList.remove('error');
+            parent.children[2].classList.add('hidden');
+        }
     }
-
-    if (!(validateDOB())) {
+    
+    {
         const parent = dob.parentElement;
-        dob.classList.add('error');
-        parent.children[2].classList.remove('hidden');
-    } else {
-        dob.classList.remove('error');
-        parent.children[2].classList.add('hidden');
+        if (!(validateDOB())) {
+            dob.classList.add('error');
+            parent.children[2].classList.remove('hidden');
+        } else {
+            dob.classList.remove('error');
+            parent.children[2].classList.add('hidden');
+        }
     }
-
-    if (!(validateGender())) {
+    
+    {
         const parent = genders[0].parentElement;
-        parent.children[6].classList.remove('hidden');
-    } else {
-        parent.children[6].classList.add('hidden');
+        if (!(validateGender())) {
+            parent.children[6].classList.remove('hidden');
+        } else {
+            parent.children[6].classList.add('hidden');
+        }
     }
-
-    if (!(validateEmail())) {
+    
+    {
         const parent = email.parentElement;
-        email.classList.remove('noError');
-        email.classList.add('error');
-        parent.children[2].classList.remove('hidden');
-    } else {
-        email.classList.remove('error');
-        email.classList.add('noError');
-        parent.children[2].classList.add('hidden');
+        if (!(validateEmail())) {
+            email.classList.remove('noError');
+            email.classList.add('error');
+            parent.children[2].classList.remove('hidden');
+        } else {
+            email.classList.remove('error');
+            email.classList.add('noError');
+            parent.children[2].classList.add('hidden');
+        }
     }
 
-    if (!(validatePhone())) {
+    {
         const parent = phone.parentElement;
-        phone.classList.remove('noError');
-        phone.classList.add('error');
-        parent.children[2].classList.remove('hidden');
-    } else {
-        phone.classList.remove('error');
-        phone.classList.add('noError');
-        parent.children[2].classList.add('hidden');
+        if (!(validatePhone())) {
+            phone.classList.remove('noError');
+            phone.classList.add('error');
+            parent.children[2].classList.remove('hidden');
+        } else {
+            phone.classList.remove('error');
+            phone.classList.add('noError');
+            parent.children[2].classList.add('hidden');
+        }
     }
 
-    if (!(validateCountry())) {
+    {
         const parent = country_dropdown.parentElement;
-        country_dropdown.classList.add('error');
-        parent.children[2].classList.remove('hidden');
-    } else {
-        country_dropdown.classList.remove('error');
-        parent.children[2].classList.add('hidden');
+        if (!(validateCountry())) {
+            country_dropdown.classList.add('error');
+            parent.children[2].classList.remove('hidden');
+        } else {
+            country_dropdown.classList.remove('error');
+            parent.children[2].classList.add('hidden');
+        }
     }
 
-    if (!(validate(state_dropdown))) {
+    {
         const parent = state_dropdown.parentElement;
-        state_dropdown.classList.add('error');
-        parent.children[2].classList.remove('hidden');
-    } else {
-        state_dropdown.classList.remove('error');
-        parent.children[2].classList.add('hidden');
+        if (!(validate(state_dropdown))) {
+            state_dropdown.classList.add('error');
+            parent.children[2].classList.remove('hidden');
+        } else {
+            state_dropdown.classList.remove('error');
+            parent.children[2].classList.add('hidden');
+        }
     }
 
-    if (!(validate(city_dropdown))) {
+    {
         const parent = city_dropdown.parentElement;
-        city_dropdown.classList.add('error');
-        parent.children[2].classList.remove('hidden');
-    } else {
-        city_dropdown.classList.remove('error');
-        parent.children[2].classList.add('hidden');
+        if (!(validate(city_dropdown))) {
+            city_dropdown.classList.add('error');
+            parent.children[2].classList.remove('hidden');
+        } else {
+            city_dropdown.classList.remove('error');
+            parent.children[2].classList.add('hidden');
+        }
     }
 
-    if (!(validate(address))) {
+    {
         const parent = address.parentElement;
-        address.classList.add('error');
-        parent.children[2].classList.remove('hidden');
-    } else {
-        address.classList.remove('error');
-        parent.children[2].classList.add('hidden');
+        if (!(validate(address))) {
+            address.classList.add('error');
+            parent.children[2].classList.remove('hidden');
+        } else {
+            address.classList.remove('error');
+            parent.children[2].classList.add('hidden');
+        }
     }
 
-    if (!(validateZipCode())) {
+    {
         const parent = zip.parentElement;
-        zip.classList.remove('noError');
-        zip.classList.add('error');
-        parent.children[2].classList.remove('hidden');
-    } else {
-        zip.classList.remove('error');
-        zip.classList.add('noError');
-        parent.children[2].classList.add('hidden');
+        if (!(validateZipCode())) {
+            zip.classList.remove('noError');
+            zip.classList.add('error');
+            parent.children[2].classList.remove('hidden');
+        } else {
+            zip.classList.remove('error');
+            zip.classList.add('noError');
+            parent.children[2].classList.add('hidden');
+        }
     }
 
-    if (!(validateColor())) {
+    {
         const parent = color.parentElement;
-        color.classList.add('error');
-        parent.children[2].classList.remove('hidden');
-    } else {
-        color.classList.remove('error');
-        parent.children[2].classList.add('hidden');
+        if (!(validateColor())) {
+            color.classList.add('error');
+            parent.children[2].classList.remove('hidden');
+        } else {
+            color.classList.remove('error');
+            parent.children[2].classList.add('hidden');
+        }
     }
     
     if (validatePassword()) {
@@ -292,7 +319,7 @@ function pushStates() {
 function pushCity (state) {
     for(const city of citiesAndStates[state]) {
         let new_option = document.createElement('option');
-        console.log(`2nd: ${city}`);
+        // console.log(`2nd: ${city}`);
         new_option.value = city;
         new_option.text = city;
         city_dropdown.appendChild(new_option);
@@ -307,7 +334,7 @@ function displayPasswordError () {
 
     const parent = password.parentElement;
 
-    if (password.value.length < 8) {
+    if (password.value.length >= 8) {
         parent.children[2].classList.add('hidden');
     } else {
         parent.children[2].classList.remove('hidden');
