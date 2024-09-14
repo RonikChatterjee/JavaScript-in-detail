@@ -32,8 +32,6 @@ form {
 .input_box {
     display: flex;
     flex-direction: column;
-    /* margin-left: 10rem; */
-    /* margin-right: 10rem; */
 }
 
 .input_box > input, .input_box > select, .input_box > textarea {
@@ -43,9 +41,18 @@ form {
     border-radius: 5px;
 }
 
-/* .input_box > input:focus, .input_box > select:focus, .input_box > textarea:focus {
-    border: 1px solid #000;
-} */
+#submit {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #41b5f8;
+    color: #fff;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
 
 .massege {
     color: #FF0000;
@@ -63,5 +70,6 @@ form {
 }
 
 .hidden {
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden; */
 }
