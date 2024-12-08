@@ -6,37 +6,36 @@
 const arr = [1, 2, 3, 4, 5]
 
 for (const num of arr) {
-    //console.log(num);
+  //console.log(num);
 }
 
-const greetings = "Hello world!"
+const greetings = 'Hello world!'
 for (const greet of greetings) {
-    //console.log(`Each char is ${greet}`)
+  //console.log(`Each char is ${greet}`)
 }
 
-// Maps
+// Maps(Unique & ordered values)
 
 const map = new Map()
-map.set('IN', "India")
-map.set('USA', "United States of America")
-map.set('Fr', "France")
-map.set('IN', "India")
-
+map.set('IN', 'India')
+map.set('USA', 'United States of America')
+map.set('Fr', 'France')
+map.set('IN', 'India') // Duplicate key will be ignored
 
 // console.log(map);
 
 for (const [key, value] of map) {
-    // console.log(key, ':-', value);
+  // console.log(key, ':-', value);
 }
 
-
-// For of loop cannot be used for objects we need to use for in loop
+// For of loop cannot be used for objects as objects are no iterable
+// we need to use for in loop
 const myObject = {
-    game1: 'NFS',
-    game2: 'Spiderman'
+  game1: 'NFS',
+  game2: 'Spiderman',
 }
 
 // for (const [key, value] of myObject) {
 //     console.log(key, ':-', value);
-    
+
 // }

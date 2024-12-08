@@ -17,9 +17,9 @@
 // console.log(str3) // Hello Ronik
 // console.log(str1 + str2) // Hello Ronik;
 
-//***** NOTE: when '+' operation is performed between two different data types, 
+//***** NOTE: when '+' operation is performed between two different data types,
 // (i) if the 1st data type is a string, then the operation is considered as string concatenation
-// (ii) if from the 2nd data type onwards, any data type is a string, except the 1st data type, then the operation is considered as string concatenation from the occurances of the string data type.*****
+// (ii) if from the 2nd data type onwards, any data type is a string, except the 1st data type, then the operation is considered as string concatenation from the occurrences of the string data type.*****
 
 // console.log("1" + 2) // 12  -> String concatenation -> 12;
 // console.log(1 + "2") // 12  -> String concatenation -> 12;

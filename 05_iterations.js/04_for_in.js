@@ -16,14 +16,13 @@
 //     //console.log(programming[key]);
 // }
 
-// const map = new Map()
-// map.set('IN', "India")
-// map.set('USA', "United States of America")
-// map.set('Fr', "France")
-// map.set('IN', "India")
-
+const map = new Map()
+map.set('IN', 'India')
+map.set('USA', 'United States of America')
+map.set('Fr', 'France')
+map.set('IN', 'India')
 
 // for in loop cannot be used for maps
-// for (const key in map) {
-//     console.log(key);
-// }
+for (const key in map) {
+  console.log(key)
+}

@@ -3,13 +3,12 @@
 // const myArray = [1, 2, 3, 4, 5]
 // console.log(myArray)
 
-const myHeroes = ["Shaktiman", "naagraj"]
+const myHeroes = ['Shaktiman', 'naagraj']
 // console.log(myHeroes)
 
 const myArr2 = new Array(11, 92, 33, 4) // Creating array using constructor
 // console.log(myArr2[0])
 // console.log(myArr2);
-
 
 // Array Methods
 
@@ -41,7 +40,7 @@ let finalArr = myArr2.concat(myHeroes)
 // console.log(finalArr.indexOf("Shaktiman"))
 // console.log(finalArr.indexOf("apple")); // If the element is not found it returns '-1'
 // --------------------------------------------------------------------
-// 8. reverse() - Reverses the order of the elements in an array
+// 8. reverse() - Reverses the order of the elements in an array(changes the original array)
 // console.log(finalArr.reverse())
 // --------------------------------------------------------------------
 // 9. join() - Joins all elements of an array into a string
@@ -61,22 +60,13 @@ let finalArr = myArr2.concat(myHeroes)
 // 11. splice() - Adds/Removes elements from an array and changes the original array not the copy
 // console.log("D ", myArr2)
 
-// const mynewArray2 = myArr2.splice(1, 3) // It will remove elements from index 1 to 3 (3 is included) from myArr2 and will return the removed elements
+// const mynewArray2 = myArr2.splice(1, 3) // It will remove elements from index 1 & 3 elements from index 1 of myArr2 and will return the removed elements
 
 // console.log("E ", mynewArray2) // Removed elements [2, 3, 4]
 
 // console.log("F ", myArr2) // Original array is changed [1]
 // --------------------------------------------------------------------
-// 12. sort() - Sorts the elements of an array
+// 12. sort() - Sorts the elements of an array in ascending order(changes the original array)
 // myArr2.sort()
-// console.log("G ", myArr2.toSorted()) // It will sort the elements in ascending order
+// console.log("G ", myArr2.toSorted()) // It will sort the elements in ascending order(not changes the original array)
 // --------------------------------------------------------------------
-
-
-
-
-
-
-
-
-

@@ -1,17 +1,18 @@
 // singleton
 // Creating objects using constructor
+// Object.create()
 
 // Objects literal -> objects are set of key value pairs
-const mySym1 = Symbol("key1")
+const mySym1 = Symbol('key1')
 const jsUser = {
-    name: "Ronik",
-    "full name": "Ronik chatterjee",
-    [mySym1]: "mykey1",
-    age: 20,
-    location: "Kolkata",
-    email: "ronik@google.com",
-    isLoggedIn: false,
-    lastLoggedIn: ["Monday", "Saturday"]
+  name: 'Ronik',
+  'full name': 'Ronik chatterjee',
+  [mySym1]: 'mykey1',
+  age: 20,
+  location: 'Kolkata',
+  email: 'ronik@google.com',
+  isLoggedIn: false,
+  lastLoggedIn: ['Monday', 'Saturday'],
 }
 
 // console.log(jsUser)
@@ -66,7 +67,3 @@ const jsUser = {
 
 // console.log(jsUser)
 // --------------------------------------------------------------------
-
-
-
-
